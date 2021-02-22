@@ -13,16 +13,15 @@ function initPlanner() {
 };
 initPlanner();
 
-
-// Colors the time blocks according to if they are greater than, less than, or equal to current moment() hour
+// Colors the time blocks according to if their ID's are greater or equal to current moment() hour
 function colorTimeBlocks() {
     hour = moment().hours();
     $(".time-block").each(function () {
-        var thisHour = parseInt($(this).attr("id"));
-        if (thisHour > hour) {
+        var timeBlockHour = parseInt($(this).attr("id"));
+        if (timeBlockHour > hour) {
             $(this).addClass("future")
         }
-        else if (thisHour === hour) {
+        else if (timeBlockHour === hour) {
             $(this).addClass("present");
         }
         else {
@@ -35,6 +34,7 @@ colorTimeBlocks();
 // save button used in both click events 
 var saveButton = $('.saveBtn');
 // save text to local storage
+// changes save buttons on click
 saveButton.on('click', function() {
     let hour = $(this).parent().attr("id");
     var userScheduleItem = $(this).siblings('.schedule').val();
@@ -45,6 +45,7 @@ saveButton.on('click', function() {
 });
 
 // clear local storage and text content 
+// reset save buttons
 $('#clear').on('click', function() {
     localStorage.clear();
     $(".time-block").find("textarea").val("");
