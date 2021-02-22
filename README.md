@@ -21,4 +21,4 @@ Users can choose to clear the planner with an added clear button. Clears the tex
 ## Installation and Usage 
 
 To view and demo this project, follow this link to the deployed application hosted by github pages. 
-[Link to deployed application]()
+[Link to deployed application](https://mother426.github.io/js-hourly-planner/)
